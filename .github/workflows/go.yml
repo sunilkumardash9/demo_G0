@@ -43,8 +43,8 @@ jobs:
           distro: ubuntu_latest
           githubToken: ${{ github.token }}
           install: |
-              sudo apt-get update && \
-              sudo apt-get install -y golang-go
+              apt-get update && \
+              apt-get install -y golang-go
              
           run: |
             go build ./...
