@@ -43,6 +43,7 @@ jobs:
           distro: ubuntu_latest
           githubToken: ${{ github.token }}
           install: |
+              apt-get install wget
               wget https://go.dev/dl/go1.19.linux-amd64.tar.gz
               tar -C /usr/local -xzf go1.19.linux-amd64.tar.gz
               
