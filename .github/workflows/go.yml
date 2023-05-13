@@ -50,7 +50,7 @@ jobs:
               tar -C /usr/local -xzf go1.19.linux-arm64.tar.gz && \
               cd /usr/local && \
               ./all.bash && \
-              export PATH=$PATH:/usr/local/go/bin && \
+              export PATH=$PATH:/usr/local/go/bin 
      
           run: |
             go build -buildvcs=false ./...
