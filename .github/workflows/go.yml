@@ -43,15 +43,9 @@ jobs:
           distro: ubuntu_latest
           githubToken: ${{ github.token }}
           install: |
-              apt-get update
-              apt-get install -y wget
-              wget https://go.dev/dl/go1.19.linux-amd64.tar.gz
-              tar -C /usr/local -xzf go1.19.linux-amd64.tar.gz
-              
-              export PATH=$PATH:/usr/local/go/bin
-              export GOPATH=$HOME/go
-              source ~/.profile
-
+              sudo apt-get update && \
+              sudo apt-get install -y golang-go
+             
           run: |
             go build ./...
             go test ./... 
