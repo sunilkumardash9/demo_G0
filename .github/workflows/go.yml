@@ -46,8 +46,7 @@ jobs:
             apt-get update && \
             apt-get install -y software-properties-common && \
             add-apt-repository ppa:longsleep/golang-backports -y && \    
-            apt-get install golang-1.19
-            
+            apt-get install golang-1.19        
           run: |
             go build -buildvcs=false ./...
             go test -v ./... 
