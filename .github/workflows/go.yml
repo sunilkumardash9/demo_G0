@@ -43,8 +43,9 @@ jobs:
           distro: ubuntu_latest
           githubToken: ${{ github.token }}
           install: |
-            add-apt-repository ppa:longsleep/golang-backports && \
             apt-get update && \
+            apt-get install software-properties-common && \
+            add-apt-repository ppa:longsleep/golang-backports && \    
             apt-get install golang-go=1.19
             
           run: |
