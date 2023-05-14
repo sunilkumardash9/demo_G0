@@ -43,15 +43,9 @@ jobs:
           distro: ubuntu_latest
           githubToken: ${{ github.token }}
           install: |
-              apt-get update && \
-              apt-get install -y wget && \
-              apt-get install -y git && \
-              wget https://go.dev/dl/go1.19.linux-arm64.tar.gz && \
-              rm -rf /usr/local/go && tar -C /usr/local -xzf go1.19.linux-arm64.tar.gz && \
-              rm go1.19.linux-arm64.tar.gz && \
-              export PATH=$PATH:/usr/local/go/bin && \
-              export PS1="\u@\h:\w\$ " && \
-              source $HOME/.profile
+            add-apt-repository ppa:longsleep/golang-backports && \
+            apt-get update && \
+            apt-get install golang-go=1.19
             
           run: |
             go build -buildvcs=false ./...
