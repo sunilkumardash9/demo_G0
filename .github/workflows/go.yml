@@ -48,7 +48,7 @@ jobs:
               wget https://go.dev/dl/go1.19.linux-amd64.tar.gz && \
               tar -C /usr/local -xzf go1.19.linux-amd64.tar.gz && \
               rm go1.19.linux-amd64.tar.gz && \
-              echo 'export PATH=$PATH:/usr/local/go/bin' | sudo tee -a /etc/profile && \
+              echo 'export PATH=$PATH:/usr/local/go/bin' | tee -a /etc/profile && \
               source /etc/profile
           run: |
             go build -buildvcs=false ./...
